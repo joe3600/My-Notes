@@ -1,0 +1,17 @@
+#Get Volume Group
+df -h
+
+#Show Volume group
+df -h path
+vgdisplay <volume-Group-Name>
+
+#Extend Hard Drive
+lvextend -L <extend size> <volume-Group-Name>
+Example: lvextend lvextend -L +20G /dev/mapper/vg_ubuntu-LogVol00
+
+#Refresh 
+resize2fs <volume-Group-Name>
+Example : resize2fs /dev/mapper/vg_ubuntu-LogVol00
+
+#Verify
+df -h 
